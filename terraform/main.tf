@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "ap-southeast-1"
+  region = "us-east-1"
 }
 
 resource "aws_instance" "ml_server" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t3.micro"
+  ami           = "ami-09e6f87a47903347c"
+  instance_type = "t2.micro"
 
   tags = {
     Name = "MLServer"
@@ -19,7 +19,7 @@ resource "aws_instance" "ml_server" {
     ]
   }
 
-  key_name = "your-key"
+  key_name = "bilia1pem"
 }
 
 resource "aws_s3_bucket" "ml_data" {
